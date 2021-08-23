@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>IVR UI Self Service</title>
+</head>
+	
+
+<style>
+	
+	#bigBox {
+  position:absolute;
+  width:200px;
+  height:200px;
+  top:50%;
+  left:50%;
+  margin:-100px 0 0 -120px;
+  animation:bigBoxAnimation 6s linear infinite;
+}
+#box,#box2 {
+  position:absolute;
+  top:60%;
+  left:50%;
+  width:40px;
+  height:40px;
+  margin:-20px 0 0 -20px;
+  animation:boxAnimation 2.95s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+}
+#box2 {
+  animation:boxAnimation 3.2s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+  transform:matrix(-1,0,0,1,0,0);
+}
+#box::after, #box2::after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:6px;
+  height:6px;
+  background:#fff;
+  border-radius:100%;
+  animation:spanAnimation 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) infinite;
+  box-shadow:rgba(255,255,255,1) 0 0 20px 2px;
+}
+@keyframes bigBoxAnimation {
+  100% {transform:rotate(360deg);}
+}
+@keyframes boxAnimation{
+  50% {transform:translateY(-150px);}
+}
+@keyframes spanAnimation {
+  50% {transform:translateX(-150px)}
+}
+	
+	
+	
+	
+	
+	p.chu {color: white}
+	h1.title{color:white}
+	
+	.box {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -80%);
+		margin:auto;
+		width: 300px;
+		height: 300px;
+		<-- border: 5px solid white; -->
+		
+		text-align: left;
+		}
+	.insidebox{
+		text-align: center;
+	}
+	.w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+</style>
+	
+			<script type="text/javascript"> 
+				function changepwbox()
+				{
+					document.form.type.value ="";
+					document.getElementById('password').type = 'password';
+				}
+</script>
+<body bgcolor="e51937">
+	
+	<div class="box">
+		<form name=form method=post action='test.php'>
+			<center><img src="logohc.png" width="280px" />
+				<h1 class="title">IVR Self Service</h1></center>
+			<input id="party" type="datetime-local" name="partydate" value="2017-06-01T08:30">
+			
+			
+			<div class="insidebox">
+				<input id="id" type="text" value="ID" onClick="this.value=''" placeholder="ID"><br></br>
+			
+			 	<input id="password" type=text name=type value='Password' onclick="changepwbox();">
+			</div>
+			<center><p><input type="submit" value="Login"></p></center>
+				
+		</form>
+	</div>
+	
+</body>
+</html>
