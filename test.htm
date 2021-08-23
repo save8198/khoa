@@ -1,0 +1,27 @@
+<html>
+<style>
+#divid {display:none;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+$('[name=lelel]').change(function(){
+    if ( this.value == 'xxx') {
+       $('#divid').show();
+    }else{
+       $('#divid').hide();
+    }
+});
+</script>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<select name="lelel">
+  <option value="x">x</option>
+  <option value="xx">xx</option>
+  <option value="xxx">xxx</option>
+</select>
+
+<div id="divid">
+  LALALALALA
+</div>
+</body>
+</html>

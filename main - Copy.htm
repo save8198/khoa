@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>IVR Self Service</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="khoa/w3.css">
+<link rel="stylesheet" href="khoa/css.css">
+<link rel="stylesheet" href="khoa/font-awesome.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+input[type="file"] {
+    display: hidden;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#hidden_div {
+    display: none;
+}
+</style>
+		
+<script type="text/javascript" charset="UTF-8" src="khoa/common.js"></script>
+<script type="text/javascript" charset="UTF-8" src="khoa/util.js"></script>
+<script type="text/javascript" charset="UTF-8" src="khoa/AuthenticationService.Authenticate"></script>
+
+</head><body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile">
+      <img src="logohc.png" width="45px" /></a>
+  
+  
+  <a href="khoa2.html" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Log out</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Hello, Khoa</a>
+  
+</div>
+<!-- Header -->
+
+
+
+
+
+
+<header class="w3-display-container w3-content" style="max-width:100%;">
+  <img class="w3-image" src="khoa/image.png" alt="The Hotel" style="min-width:1000px" width="1920" height="1080">
+  <div class="w3-display-left w3-padding w3-col l6 m8">
+    <div class="w3-container w3-red">
+      <h2>IVR Self Service</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <form action="/action_page.php" target="_blank">
+          
+          <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label>Line: <b>38999666 </b> </label>
+            <!-- <input class="w3-input w3-border" type="text" placeholder="" name="DP" required=""> -->
+            <i></i>
+            
+          </div>
+          <div class="w3-half">
+			
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <select name="datetime" id="datetime" form="datetime" onchange="showDiv('hidden_div', this)">
+                <option value="daily">Daily</option>
+                <option value="weekend">Weekend</option>
+                <option value="holiday">Holiday</option>
+                </select>
+				
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label>Time from:</label>
+            <input class="w3-input w3-border" type="datetime-local" placeholder="DD MM YYYY" name="TF" required="">
+           
+          </div>
+          <div class="w3-half">
+            <label>Time to:</label>
+            <input class="w3-input w3-border" type="datetime-local" placeholder="DD MM YYYY" name="TT" required="">
+          </div>
+        </div>
+		
+		
+		<div id="hidden_div" class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label>Date from:</label>
+            <input class="w3-input w3-border" type="datetime-local" placeholder="DD MM YYYY" name="TF" required="">
+           
+          </div>
+          <div class="w3-half">
+            <label>Date to:</label>
+            <input class="w3-input w3-border" type="datetime-local" placeholder="DD MM YYYY" name="TT" required="">
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:8px -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label> Upload file:</label>
+           <!-- <input class="w3-input w3-border" type="text" value="1" name="file" required=""> -->
+            <input id="file-upload" type="file"
+          </div>
+          
+        </div>
+        <br>
+        
+            
+            
+        <button class="w3-button w3-dark-grey" type="submit"> Upload</button>
+        <button class="w3-button w3-dark-grey" type="reset"> Cancel</button>
+       <div class="w3-row-padding" style="margin:0 -16px;">
+           <div class="w3-half w3-margin-bottom">
+<h6><b>  Please transfer file to wav with default <b></h6>
+<h6> Bit resolution: 16 Bit</h6>
+<h6> Sampling rate: 8000Hz</h6>
+<h6> Audio Channels: Mono</h6>
+<h6> Links:<a href="https://audio.online-convert.com/convert-to-wav"> https://audio.online-convert.com/convert-to-wav </a></h6>
+</div>
+    <div class="w3-half">
+        <font color="e51937">
+        <h6> <b>Home Credit VN</b></h6>
+<h6> <b>Contact Center Team VN</b></h6>
+<h6> Hotline: 1900633633</h6>
+<h6> Website: <a href="https://homecredit.vn"> https://homecredit.vn</a></h6>
+</font>
+        </div>
+</div>
+      </form>
+    </div>
+  </div>
+</header>
+
+
+
+
+<script>
+document.getElementById('datetime').addEventListener('change', function () {
+    var style = this.value == 'holiday' ? 'block' : 'none';
+    document.getElementById('hidden_div').style.display = style;
+});
+</script>
+</body></html>
